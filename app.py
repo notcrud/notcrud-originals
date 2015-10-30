@@ -1,6 +1,8 @@
 from flask import Flask, render_template
+from flaskext.markdown import Markdown
 
 app = Flask(__name__)
+Markdown(app)
 
 @app.route('/')
 def home_view():
@@ -13,7 +15,7 @@ def postman_view():
 	post_headline = 'Fixing the API development workflow.'
 	post_thread_url = 'http://notcrud.com/topic/212/postman-fixing-the-api-workflow'
 
-	return render_template('post.html', post_title=post_title, post_headline=post_headline, post_thread_url=post_thread_url)
+	return render_template('postman.html', post_title=post_title, post_headline=post_headline, post_thread_url=post_thread_url)
 
 
 
